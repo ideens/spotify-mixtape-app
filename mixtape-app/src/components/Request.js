@@ -13,14 +13,17 @@ const Request = () => {
     }, [])
 
     useEffect(() => {
-        console.log("finding the music")
-        handleGetMusic()
+        console.log("use effect token", token)
+        if (token) {
+            handleGetMusic()
+        }
     }, [token])
 
     const handleGetMusic = () => {
+        console.log("token in handlemusic function", token)
         axios.get(`${musicEndpoint}something&type=track`, {
             headers: {
-                Authorization: 'Bearer ' + token,
+                Authorization: `Bearer ${token}`,
             },
         })
             .then((response) => {
