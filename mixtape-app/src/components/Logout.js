@@ -1,9 +1,9 @@
 import { removeAccessToken } from "../helpers/localStores";
 
-const Logout = () => {
+const Logout = ({ setLoggedIn }) => {
 
     const authorizeEndpoint = 'https://accounts.spotify.com/authorize'
-    const redirectUri = 'http://localhost:3001/callback'
+    const redirectUri = 'http://localhost:3000/callback/'
     const clientID = '3491bd99fc3d48a695f0ef714ca56d4e'
     const spaceDelimiter = '%20'
     const scopes = [
@@ -12,18 +12,19 @@ const Logout = () => {
     ]
     const scopesUrlParam = scopes.join(spaceDelimiter)
 
-function handleLogout() {
-    removeAccessToken()
-    window.location = `${authorizeEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
-}
+    function handleLogout() {
+        removeAccessToken()
+        setLoggedIn(false)
+        window.location = `${authorizeEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
+    }
 
 
     return (
-    
+
         <div className='logout_container'>
             <button className='logout_button' onClick={handleLogout}>LOGOUT OF SPOTIFY</button>
         </div>
-       
+
     )
 }
 
