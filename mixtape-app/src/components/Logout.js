@@ -15,7 +15,7 @@ const Logout = () => {
     function handleLogout() {
         console.log("trying to log out")
         removeAccessToken()
-        // window.location = `${authorizeEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
+        window.location = `${authorizeEndpoint}?client_id=${clientID}&redirect_uri=${redirectUri}&scope=${scopesUrlParam}&response_type=token&show_dialog=true`
     }
 
     return (
