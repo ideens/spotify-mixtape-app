@@ -5,7 +5,7 @@ const Mixtape = ({ userSongs, setUserSongs }) => {
     const [mixtapeTracks, setMixtapeTracks] = useState([])
 
     useEffect(() => {
-        console.log(userSongs)
+        console.log("user Songs", userSongs)
         setMixtapeTracks(userSongs)
         console.log("after add", mixtapeTracks)
     }, [userSongs])
