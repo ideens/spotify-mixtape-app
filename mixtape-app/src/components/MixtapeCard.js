@@ -8,15 +8,9 @@ const MixtapeCard = ({ artistName,
 }) => {
 
     function removeSong() {
-        const findTrackIndex = (track) => track.id === id
-        const newSongList = userSongs.filter((track) => {
+        setUserSongs(userSongs.filter((track) => {
             return track.id !== id
-        })
-        // let trackIndex = userSongs.findIndex(findTrackIndex)
-        // let songList = userSongs
-        // songList.splice(trackIndex, 1)
-        console.log("new song list after filter ", newSongList)
-        setUserSongs(newSongList)
+        }))
     }
 
     return (

@@ -7,7 +7,6 @@ const SongCard = ({
     userSongs,
     setUserSongs
 }) => {
-
     function takeSong() {
         console.log("before add", userSongs)
         setUserSongs([...userSongs, {
