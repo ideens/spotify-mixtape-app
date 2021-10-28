@@ -25,7 +25,11 @@ const SongCard = ({
             <p>{artist_name}</p>
             <p>{album_name}</p>
             <img src={album_art.url} alt={album_name} />
-            <button onClick={takeSong}>Add</button>
+            {
+                (userSongs.some((track) => { return track.id === track_id })) ? (<></>) :
+                    (<button onClick={takeSong}>Add</button>)
+            }
+
         </div>
     )
 }
