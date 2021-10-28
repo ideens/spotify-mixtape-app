@@ -1,7 +1,7 @@
 import MixtapeCard from "./MixtapeCard"
 import { useState, useEffect } from "react"
 
-const Mixtape = ({ userSongs, setUserSongs }) => {
+const Mixtape = ({ userSongs, setUserSongs, setPlayID }) => {
     const [mixtapeTracks, setMixtapeTracks] = useState([])
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const Mixtape = ({ userSongs, setUserSongs }) => {
             <div className='mixtape'>
                 {mixtapeTracks.map((song) => (
                     <li key={song.id} >
-                        <MixtapeCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} />
+                        <MixtapeCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID}/>
                     </li>
                 ))
                 }

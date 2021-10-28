@@ -20,7 +20,8 @@ const SongCard = ({
     }
 
     function handlePlay() {
-        setPlayID(track_id)
+        console.log(track_id)
+        setPlayID([`spotify:track:${track_id}`])
     }
 
     return (

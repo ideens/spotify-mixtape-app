@@ -4,6 +4,7 @@ const Player = ({ playID }) => {
     const [playing, setPlaying] = useState(false)
 
     useEffect(() => {
+        console.log(playID)
         setPlaying(true)
     }, [playID])
 
@@ -12,7 +13,7 @@ const Player = ({ playID }) => {
         <div>
             <SpotifyWebPlayer
                 token={localStorage.getItem('accessToken')}
-                uris={playID ? [playID] : []}
+                uris= {playID}
                 showSaveIcon
                 callback={state => {
                     if (!state.isPlaying) {
@@ -20,6 +21,8 @@ const Player = ({ playID }) => {
                     }
                 }}
                 play={playing}
+                initialVolume={0.5}
+                autoPlay={false}
             />
         </div>
     )
