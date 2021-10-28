@@ -22,5 +22,4 @@ const MixtapeCard = ({ artistName,
         </div>
     )
 }
-
 export default MixtapeCard

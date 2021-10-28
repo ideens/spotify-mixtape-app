@@ -15,7 +15,6 @@ const Request = ({ userSongs, setUserSongs }) => {
             },
         })
             .then((response) => {
-                console.log("response track list", response.data.tracks.items)
                 const listOfTracks = response.data.tracks.items.map((track) => {
                     return {
                         track_id: track.id,
@@ -25,9 +24,8 @@ const Request = ({ userSongs, setUserSongs }) => {
                         album_name: track.album.name
                     }
                 })
-                console.log("got the response?", response)
+                console.log(listOfTracks)
                 setTrackData(listOfTracks)
-                console.log("an array full of trucks", listOfTracks)
             })
             .catch((err) => {
                 console.error('error fetching music', err)

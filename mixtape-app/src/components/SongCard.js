@@ -8,7 +8,6 @@ const SongCard = ({
     setUserSongs
 }) => {
     function takeSong() {
-        console.log("before add", userSongs)
         setUserSongs([...userSongs, {
             trackName: track_name,
             artistName: artist_name,
@@ -18,7 +17,6 @@ const SongCard = ({
         }])
     }
 
-
     return (
         <div>
             <h3>{track_name}</h3>
@@ -26,9 +24,10 @@ const SongCard = ({
             <p>{album_name}</p>
             <img src={album_art.url} alt={album_name} />
             {
-                (userSongs.some((track) => { return track.id === track_id })) ? (<></>) :
+                (userSongs.some((track) => { return track.id === track_id })) ? (<p>Added!</p>) :
                     (<button onClick={takeSong}>Add</button>)
             }
+            <button>Play</button>
 
         </div>
     )
