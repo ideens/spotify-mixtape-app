@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { removeAccessToken } from "../helpers/localStores";
 
 const Logout = () => {

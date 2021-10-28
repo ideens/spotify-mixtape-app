@@ -1,29 +1,20 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import axios from 'axios'
 import SongCard from "./SongCard"
 
-const Request = () => {
+const Request = ({ userSongs, setUserSongs, setPlayID }) => {
     const musicEndpoint = `https://api.spotify.com/v1/search?q=`
-    const [token, setToken] = useState('')
     const [trackData, setTrackData] = useState([])
     const [search, setSearch] = useState('')
 
-    useEffect(() => {
-        if (localStorage.getItem('accessToken')) {
-            setToken(localStorage.getItem('accessToken'))
-        }
-    }, [])
-
     const handleGetMusic = (event) => {
         event.preventDefault()
-        console.log("token in handlemusic function", token)
         axios.get(`${musicEndpoint}${search}&type=track`, {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
             },
         })
             .then((response) => {
-                console.log("response track list", response.data.tracks.items)
                 const listOfTracks = response.data.tracks.items.map((track) => {
                     return {
                         track_id: track.id,
@@ -33,9 +24,8 @@ const Request = () => {
                         album_name: track.album.name
                     }
                 })
-                console.log("got the response?", response)
+                console.log(listOfTracks)
                 setTrackData(listOfTracks)
-                console.log("an array full of trucks", listOfTracks)
             })
             .catch((err) => {
                 console.error('error fetching music', err)
@@ -56,7 +46,7 @@ const Request = () => {
                 <ul>
                     {trackData.map((song) => (
                         <li key={song.track_id}>
-                            <SongCard {...song} />
+                            <SongCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
                         </li>
                     ))
                     }
