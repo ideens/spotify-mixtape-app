@@ -1,12 +1,13 @@
 import MixtapeCard from "./MixtapeCard"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
-const Mixtape = ({ userSongs }) => {
-    let mixtapeTracks = []
+const Mixtape = ({ userSongs, setUserSongs }) => {
+    const [mixtapeTracks, setMixtapeTracks] = useState([])
+
     useEffect(() => {
         console.log(userSongs)
-        // mixtapeTracks = userSongs
-        // console.log("after add", mixtapeTracks)
+        setMixtapeTracks(userSongs)
+        console.log("after add", mixtapeTracks)
     }, [userSongs])
 
     return (
@@ -14,13 +15,13 @@ const Mixtape = ({ userSongs }) => {
             <h1>Your Mixtape</h1>
             <div className='mixtape'>
                 {mixtapeTracks.map((song) => (
-                    <li>
-                        <MixtapeCard {...song} />
+                    <li key={song.id} >
+                        <MixtapeCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} />
                     </li>
                 ))
                 }
             </div>
-        </div>
+        </div >
     )
 
 }

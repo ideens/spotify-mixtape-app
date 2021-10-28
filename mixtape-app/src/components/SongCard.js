@@ -1,10 +1,9 @@
-import { useEffect } from "react"
-
 const SongCard = ({
     artist_name,
     track_name,
     album_art,
     album_name,
+    track_id,
     userSongs,
     setUserSongs
 }) => {
@@ -15,7 +14,8 @@ const SongCard = ({
             trackName: track_name,
             artistName: artist_name,
             albumArt: album_art,
-            albumName: album_name
+            albumName: album_name,
+            id: track_id
         }])
     }
 

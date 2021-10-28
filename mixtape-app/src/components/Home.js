@@ -44,7 +44,7 @@ const Home = () => {
             <Logout />
             <Request userSongs={userSongs} setUserSongs={setUserSongs} />
             <Login />
-            <Mixtape userSongs={userSongs} />
+            <Mixtape userSongs={userSongs} setUserSongs={setUserSongs} />
         </div>
     )
 }

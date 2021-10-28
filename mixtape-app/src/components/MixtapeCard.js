@@ -1,13 +1,22 @@
-const MixtapeCard = ({ artist_name,
-    track_name,
-    album_art,
-    album_name
+const MixtapeCard = ({ artistName,
+    trackName,
+    albumArt,
+    albumName,
+    userSongs,
+    setUserSongs
 }) => {
+
+    function removeSong() {
+        let songList = userSongs.splice(userSongs.indexOf(), 1)
+        setUserSongs(songList)
+    }
+
     return (
         <div>
-            <h3>{track_name}</h3>
-            <p>{artist_name}</p>
-            <img src={album_art.url} alt={album_name} />
+            <h3>{trackName}</h3>
+            <p>{artistName}</p>
+            <img src={albumArt.url} alt={albumName} />
+            <button onClick={removeSong}>Remove</button>
         </div>
     )
 }
