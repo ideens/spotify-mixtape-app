@@ -44,7 +44,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
 
     function handleLogin() {
         // console.log("sacrificial console.log")
-        // console.log("first window.location", String(window.location))
+        // console.log("first window.location", String(window.location)) 
         // console.log("first", loggedIn)
         setLoggedIn(true)
         // console.log("second", loggedIn)

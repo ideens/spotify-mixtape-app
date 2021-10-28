@@ -21,12 +21,13 @@ const Request = () => {
 
     const handleGetMusic = () => {
         console.log("token in handlemusic function", token)
-        axios.get(`${musicEndpoint}something&type=track`, {
+        axios.get(`${musicEndpoint}dayglow&type=track`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
         })
             .then((response) => {
+                console.log(response.data)
                 setData(response.data)
             })
             .catch((err) => {
@@ -35,9 +36,20 @@ const Request = () => {
     }
 
     return (
-        <form>
-            <input type='text'></input>
-        </form>
+        <>
+            <form>
+                <input type='text'></input>
+            </form>
+            <ul>
+                {
+                    <li>
+                        {data.tracks.items.map((song) => (
+                            <SongCard  {...song} />
+                        ))}
+                    </li>
+                }
+            </ul>
+        </>
     )
 
 }
