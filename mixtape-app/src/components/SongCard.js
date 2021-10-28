@@ -10,6 +10,7 @@ const SongCard = ({
             <p>{artist_name}</p>
             <p>{album_name}</p>
             <img src={album_art.url} alt={album_name} />
+            <button>Add</button>
         </div>
     )
 }

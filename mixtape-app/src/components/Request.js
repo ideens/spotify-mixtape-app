@@ -21,13 +21,14 @@ const Request = () => {
     //     }
     // }, [token])
 
-    const handleGetMusic = () => {
+    const handleGetMusic = (event) => {
+        event.preventDefault()
         console.log("token in handlemusic function", token)
-        axios.get(`${musicEndpoint}something&type=track`, {
+        axios.get(`${musicEndpoint}${search}&type=track`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
-        }
+        })
             .then((response) => {
                 console.log("response track list", response.data.tracks.items)
                 const listOfTracks = response.data.tracks.items.map((track) => {
