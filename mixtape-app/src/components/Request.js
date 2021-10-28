@@ -6,7 +6,7 @@ const Request = () => {
     const musicEndpoint = `https://api.spotify.com/v1/search?q=`
     const [token, setToken] = useState('')
     const [trackData, setTrackData] = useState([])
-    // let truckData = []
+    const [search, setSearch] = useState('')
 
     useEffect(() => {
         if (localStorage.getItem('accessToken')) {
@@ -14,20 +14,20 @@ const Request = () => {
         }
     }, [])
 
-    useEffect(() => {
-        console.log("use effect token", token)
-        if (token) {
-            handleGetMusic()
-        }
-    }, [token])
+    // useEffect(() => {
+    //     console.log("use effect token", token)
+    //     if (token) {
+    //         handleGetMusic()
+    //     }
+    // }, [token])
 
     const handleGetMusic = () => {
         console.log("token in handlemusic function", token)
-        axios.get(`${musicEndpoint}dayglow&type=track`, {
+        axios.get(`${musicEndpoint}something&type=track`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
-        })
+        }
             .then((response) => {
                 console.log("response track list", response.data.tracks.items)
                 const listOfTracks = response.data.tracks.items.map((track) => {
@@ -39,6 +39,7 @@ const Request = () => {
                         album_name: track.album.name
                     }
                 })
+                console.log("got the response?", response)
                 setTrackData(listOfTracks)
                 console.log("an array full of trucks", listOfTracks)
             })
@@ -47,10 +48,14 @@ const Request = () => {
             })
     }
 
+    const handleSearchChange = (event) => {
+        setSearch(event.target.value)
+    }
+
     return (
         <>
-            <form>
-                <input type='text'></input>
+            <form onSubmit={handleGetMusic}>
+                <input type='text' onChange={handleSearchChange}></input>
             </form>
             <ul>
                 {trackData.map((song) => (

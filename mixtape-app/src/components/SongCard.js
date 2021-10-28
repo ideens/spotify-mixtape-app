@@ -9,7 +9,7 @@ const SongCard = ({
             <h3>{track_name}</h3>
             <p>{artist_name}</p>
             <p>{album_name}</p>
-            <img src={album_art.url} />
+            <img src={album_art.url} alt={album_name} />
         </div>
     )
 }
