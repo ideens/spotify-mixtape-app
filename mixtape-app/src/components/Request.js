@@ -14,13 +14,6 @@ const Request = () => {
         }
     }, [])
 
-    // useEffect(() => {
-    //     console.log("use effect token", token)
-    //     if (token) {
-    //         handleGetMusic()
-    //     }
-    // }, [token])
-
     const handleGetMusic = (event) => {
         event.preventDefault()
         console.log("token in handlemusic function", token)
@@ -55,17 +48,20 @@ const Request = () => {
 
     return (
         <>
-            <form onSubmit={handleGetMusic}>
-                <input type='text' onChange={handleSearchChange}></input>
-            </form>
-            <ul>
-                {trackData.map((song) => (
-                    <li key={song.track_id}>
-                        <SongCard {...song} />
-                    </li>
-                ))
-                }
-            </ul>
+            <section className='search_section'>
+                {(localStorage.getItem('accessToken')) ? (
+                    <form onSubmit={handleGetMusic}>
+                        <input type='text' onChange={handleSearchChange}></input>
+                    </form>) : (<></>)}
+                <ul>
+                    {trackData.map((song) => (
+                        <li key={song.track_id}>
+                            <SongCard {...song} />
+                        </li>
+                    ))
+                    }
+                </ul>
+            </section>
         </>
     )
 
