@@ -24,10 +24,12 @@ const SongCard = ({
     }
 
     return (
-        <div>
+        <div className='song-card'>
+            <div className='track-text'></div>
             <h3>{track_name}</h3>
             <p>{artist_name}</p>
             <p>{album_name}</p>
+            <div />
             <img src={album_art.url} alt={album_name} />
             {
                 (userSongs.some((track) => { return track.id === track_id })) ? (<p>Added!</p>) :

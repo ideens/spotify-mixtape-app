@@ -1,0 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
+.song-card{
+    background-color: lightblue;
+}
