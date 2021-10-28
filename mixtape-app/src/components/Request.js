@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import SongCard from "./SongCard"
 
 const Request = () => {
     const musicEndpoint = `https://api.spotify.com/v1/search?q=`
     const [token, setToken] = useState('')
-    const [data, setData] = useState({})
     const [trackData, setTrackData] = useState([])
+    // let truckData = []
 
     useEffect(() => {
         if (localStorage.getItem('accessToken')) {
@@ -29,15 +30,17 @@ const Request = () => {
         })
             .then((response) => {
                 console.log("response track list", response.data.tracks.items)
-                setData(response.data.tracks.items)
-                response.data.tracks.items.map((track) => {
-                    return setTrackData([...trackData, {
-                        'artist_name': track.artists[0].name,
-                        'track_name': track.name,
-                        'album_art': track.album.images[2],
-                        'album_name': track.album.name
-                    }])
+                const listOfTracks = response.data.tracks.items.map((track) => {
+                    return {
+                        track_id: track.id,
+                        artist_name: track.artists[0].name,
+                        track_name: track.name,
+                        album_art: track.album.images[2],
+                        album_name: track.album.name
+                    }
                 })
+                setTrackData(listOfTracks)
+                console.log("an array full of trucks", listOfTracks)
             })
             .catch((err) => {
                 console.error('error fetching music', err)
@@ -50,13 +53,12 @@ const Request = () => {
                 <input type='text'></input>
             </form>
             <ul>
-                {/* {
-                    <li>
-                        {data.tracks.items.map((song) => (
-                            <SongCard  {...song} />
-                        ))}
+                {trackData.map((song) => (
+                    <li key={song.track_id}>
+                        <SongCard {...song} />
                     </li>
-                } */}
+                ))
+                }
             </ul>
         </>
     )
