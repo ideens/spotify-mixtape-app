@@ -7,10 +7,12 @@ import Request from "./Request.js"
 import Login from "./Login.js"
 import Logout from "./Logout.js"
 import Mixtape from "./Mixtape.js"
+import Player from "./Player.js"
 
 const Home = () => {
     const history = useHistory()
     const [userSongs, setUserSongs] = useState([])
+    const [playID, setPlayID] = useState('')
 
     function getSpotifyParams(hash) {
         const urlString = hash.substring(1)
@@ -42,9 +44,10 @@ const Home = () => {
         <div>
             <h1>Welcome to mIxtape.</h1>
             <Logout />
-            <Request userSongs={userSongs} setUserSongs={setUserSongs} />
+            <Request userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
             <Login />
             <Mixtape userSongs={userSongs} setUserSongs={setUserSongs} />
+            <Player playID={playID} />
         </div>
     )
 }

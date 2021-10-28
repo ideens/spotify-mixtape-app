@@ -6,7 +6,12 @@ const Login = () => {
     const spaceDelimiter = '%20'
     const scopes = [
         'user-library-read',
-        'user-library-modify'
+        'user-library-modify',
+        'streaming',
+        'user-read-email',
+        'user-read-private',
+        'user-read-playback-state',
+        'user-modify-playback-state',
     ]
     const scopesUrlParam = scopes.join(spaceDelimiter)
 

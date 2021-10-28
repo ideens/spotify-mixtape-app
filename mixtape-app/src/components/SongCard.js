@@ -1,3 +1,4 @@
+import { useState } from "react"
 const SongCard = ({
     artist_name,
     track_name,
@@ -5,7 +6,8 @@ const SongCard = ({
     album_name,
     track_id,
     userSongs,
-    setUserSongs
+    setUserSongs,
+    setPlayID
 }) => {
     function takeSong() {
         setUserSongs([...userSongs, {
@@ -15,6 +17,10 @@ const SongCard = ({
             albumName: album_name,
             id: track_id
         }])
+    }
+
+    function handlePlay() {
+        setPlayID(track_id)
     }
 
     return (
@@ -27,7 +33,8 @@ const SongCard = ({
                 (userSongs.some((track) => { return track.id === track_id })) ? (<p>Added!</p>) :
                     (<button onClick={takeSong}>Add</button>)
             }
-            <button>Play</button>
+            <button onClick={handlePlay}>Play</button>
+
 
         </div>
     )

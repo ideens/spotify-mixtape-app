@@ -2,7 +2,7 @@ import { useState } from "react"
 import axios from 'axios'
 import SongCard from "./SongCard"
 
-const Request = ({ userSongs, setUserSongs }) => {
+const Request = ({ userSongs, setUserSongs, setPlayID }) => {
     const musicEndpoint = `https://api.spotify.com/v1/search?q=`
     const [trackData, setTrackData] = useState([])
     const [search, setSearch] = useState('')
@@ -46,7 +46,7 @@ const Request = ({ userSongs, setUserSongs }) => {
                 <ul>
                     {trackData.map((song) => (
                         <li key={song.track_id}>
-                            <SongCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} />
+                            <SongCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
                         </li>
                     ))
                     }
