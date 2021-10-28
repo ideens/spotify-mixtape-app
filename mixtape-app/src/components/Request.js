@@ -1,25 +1,17 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import axios from 'axios'
 import SongCard from "./SongCard"
 
-const Request = () => {
+const Request = ({ userSongs, setUserSongs }) => {
     const musicEndpoint = `https://api.spotify.com/v1/search?q=`
-    const [token, setToken] = useState('')
     const [trackData, setTrackData] = useState([])
     const [search, setSearch] = useState('')
 
-    useEffect(() => {
-        if (localStorage.getItem('accessToken')) {
-            setToken(localStorage.getItem('accessToken'))
-        }
-    }, [])
-
     const handleGetMusic = (event) => {
         event.preventDefault()
-        console.log("token in handlemusic function", token)
         axios.get(`${musicEndpoint}${search}&type=track`, {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
             },
         })
             .then((response) => {
@@ -56,7 +48,7 @@ const Request = () => {
                 <ul>
                     {trackData.map((song) => (
                         <li key={song.track_id}>
-                            <SongCard {...song} />
+                            <SongCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} />
                         </li>
                     ))
                     }
