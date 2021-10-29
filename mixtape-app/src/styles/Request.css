@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+.song-card-list-item {
+  width: 500px;
+}
+
+.song-card-list {
+  width: 500px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.search_section {
+  border: 1px solid green;
+  width: 45vw;
+  height: 80vh;
+  overflow: scroll;
+}
+
+input {
+  background-color: rgb(233, 233, 233);
+  height: 50px;
+  font-size: 30px;
+  border-radius: 50px;
+  border: none;
+  padding: 20px;
+}

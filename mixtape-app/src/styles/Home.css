@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.left-column {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 50vw;
+}
+
+.main {
+  display: flex;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: row;
+  background-color: lightyellow;
+}

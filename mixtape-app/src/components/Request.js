@@ -1,6 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 import SongCard from "./SongCard"
+import '../styles/Request.css'
 
 const Request = ({ userSongs, setUserSongs, setPlayID }) => {
     const musicEndpoint = `https://api.spotify.com/v1/search?q=`
@@ -41,11 +42,11 @@ const Request = ({ userSongs, setUserSongs, setPlayID }) => {
             <section className='search_section'>
                 {(localStorage.getItem('accessToken')) ? (
                     <form onSubmit={handleGetMusic}>
-                        <input type='text' onChange={handleSearchChange}></input>
+                        <input type='text' placeholder='Search' onChange={handleSearchChange}></input>
                     </form>) : (<></>)}
-                <ul>
+                <ul className='song-card-list'>
                     {trackData.map((song) => (
-                        <li key={song.track_id}>
+                        <li className='song-card-list-item' key={song.track_id}>
                             <SongCard {...song} userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
                         </li>
                     ))

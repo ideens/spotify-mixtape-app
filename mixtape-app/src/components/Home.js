@@ -8,6 +8,7 @@ import Login from "./Login.js"
 import Logout from "./Logout.js"
 import Mixtape from "./Mixtape.js"
 import Player from "./Player.js"
+import '../styles/Home.css'
 
 const Home = () => {
     const history = useHistory()
@@ -42,12 +43,20 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Welcome to mIxtape.</h1>
-            <Logout />
-            <Request userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
-            <Login />
-            <Mixtape userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID}/>
-            <Player playID={playID} />
+            <div className='main'>
+                <div className='left-column'>
+                    <h1>Welcome to mIxtape.</h1>
+                    <Logout />
+                    <Request userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
+                    <Login />
+                </div>
+                <div className='right-column'>
+                    <Mixtape userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID}/>
+                </div>
+            </div>
+            <div className='side'>
+                <Player playID={playID} />
+            </div>
         </div>
     )
 }
