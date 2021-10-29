@@ -42,7 +42,7 @@ const SongCard = ({
             <p className='album-name'>{album_name}</p>
             </div>
             <div className='track-play-button'>
-            <button className='play-button' onClick={handlePlay}><img src='../assets/play-button.png'/></button>
+            <button className='play-button' onClick={handlePlay}><img className='play-icon' src={playButton}/></button>
             </div>
 
 

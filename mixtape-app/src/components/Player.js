@@ -10,33 +10,24 @@ const Player = ({ playID }) => {
         setPlaying(true)
     }, [playID])
 
-
     if (!accessToken) {
         return null
     }
-
-
     return (
         <div>
-            {(window.Spotify) ? (
-                <SpotifyWebPlayer
-                    token={localStorage.getItem('accessToken')}
-                    uris={playID}
-                    showSaveIcon
-                    callback={state => {
-                        if (!state.isPlaying) {
-                            setPlaying(false)
-                        }
-                    }}
-                    play={playing}
-                    initialVolume={0.5}
-                    autoPlay={false}
-                />
-            ) : (
-                <></>
-            )
-
-            }
+            <SpotifyWebPlayer
+                token={localStorage.getItem('accessToken')}
+                uris={playID}
+                showSaveIcon
+                callback={state => {
+                    if (!state.isPlaying) {
+                        setPlaying(false)
+                    }
+                }}
+                play={playing}
+                initialVolume={0.5}
+                autoPlay={false}
+            />
         </div>
     )
 }
