@@ -1,5 +1,6 @@
 import { useState } from "react"
 import '../styles/SongCard.css'
+import playButton from '../assets/play-button.png'
 
 const SongCard = ({
     artist_name,
@@ -41,7 +42,7 @@ const SongCard = ({
             <p className='album-name'>{album_name}</p>
             </div>
             <div className='track-play-button'>
-            <button className='play-button' onClick={handlePlay}>Play</button>
+            <button className='play-button' onClick={handlePlay}><img src='../assets/play-button.png'/></button>
             </div>
 
 
