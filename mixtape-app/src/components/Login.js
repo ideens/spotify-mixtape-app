@@ -1,3 +1,4 @@
+import '../styles/Buttons.css'
 
 const Login = () => {
     const authorizeEndpoint = 'https://accounts.spotify.com/authorize'

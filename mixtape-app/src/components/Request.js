@@ -22,6 +22,7 @@ const Request = ({ userSongs, setUserSongs, setPlayID }) => {
                         artist_name: track.artists[0].name,
                         track_name: track.name,
                         album_art: track.album.images[2],
+                        album_art_bigger: track.album.images[1],
                         album_name: track.album.name
                     }
                 })

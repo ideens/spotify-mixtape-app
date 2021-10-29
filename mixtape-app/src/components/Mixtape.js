@@ -10,8 +10,8 @@ const Mixtape = ({ userSongs, setUserSongs, setPlayID }) => {
     }, [userSongs])
 
     return (
-        <div>
-            <h1>Your Mixtape</h1>
+        <div> 
+            <h1 className='mixtape-header'>Your Collection</h1>
             <div className='mixtape'>
                 {mixtapeTracks.map((song) => (
                     <li className='mixtape-list-item' key={song.id} >

@@ -42,10 +42,10 @@ const Home = () => {
     })
 
     return (
-        <div>
+        <div className='body'>
             <div className='main'>
                 <div className='left-column'>
-                    <h1>Welcome to mIxtape.</h1>
+                    <h1>Welcome to mixtape.</h1>
                     <Logout />
                     <Request userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
                     <Login />
