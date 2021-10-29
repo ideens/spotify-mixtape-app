@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Switch>
         <Route
-          path='/callback/'
+          path='/'
           component={Home}
         />
       </Switch>

@@ -1,7 +1,7 @@
 
 const Login = () => {
     const authorizeEndpoint = 'https://accounts.spotify.com/authorize'
-    const redirectUri = 'http://localhost:3000/callback/'
+    const redirectUri = 'http://localhost:3000/'
     const clientID = '3491bd99fc3d48a695f0ef714ca56d4e'
     const spaceDelimiter = '%20'
     const scopes = [
