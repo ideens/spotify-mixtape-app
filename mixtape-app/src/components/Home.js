@@ -37,7 +37,7 @@ const Home = () => {
             setTokenType(token_type)
             setExpiry(expires_in)
             console.log("the access stuff", access_token, expires_in, token_type)
-            history.push('/callback/')
+            history.push('/')
         }
     })
 
@@ -51,7 +51,7 @@ const Home = () => {
                     <Login />
                 </div>
                 <div className='right-column'>
-                    <Mixtape userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID}/>
+                    <Mixtape userSongs={userSongs} setUserSongs={setUserSongs} setPlayID={setPlayID} />
                 </div>
             </div>
             <div className='side'>
