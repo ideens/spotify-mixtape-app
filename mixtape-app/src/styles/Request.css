@@ -9,7 +9,7 @@
 .song-card-list {
   width: 500px;
   position: relative;
-  top: 50px;
+  top: 35px;
   margin-top: 10px;
   margin-left: 20px;
   padding: 0px;
@@ -25,6 +25,7 @@ input {
   z-index: 1;
   position: fixed;
   left: 30px;
+  top: 170px;
   outline: none;
   margin: 0px 0px 12px 10px;
   background-color: transparent;

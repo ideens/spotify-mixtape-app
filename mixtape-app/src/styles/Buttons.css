@@ -1,7 +1,7 @@
 .login_button {
   position: relative;
   top: -20px;
-  margin: 0px 0px 10px 15px;
+  margin: 0px 0px 20px 15px;
   background: #845df0;
   border-radius: 999px;
   box-shadow: #845df0 0 10px 20px -10px;
@@ -12,9 +12,9 @@
     NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
     "Noto Sans", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 20px;
   opacity: 1;
   outline: 0 solid transparent;
   padding: 8px 18px;
@@ -29,7 +29,7 @@
 .logout_button {
   position: relative;
   top: -20px;
-  margin: 0px 0px 10px 15px;
+  margin: 0px 0px 20px 15px;
   background: #845df0;
   border-radius: 999px;
   box-shadow: #845df0 0 10px 20px -10px;
@@ -40,9 +40,9 @@
     NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
     EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
     "Noto Sans", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 20px;
   opacity: 1;
   outline: 0 solid transparent;
   padding: 8px 18px;

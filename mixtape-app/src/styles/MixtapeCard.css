@@ -3,7 +3,7 @@
 }
 
 .mixtape-header {
-  margin: 25px 0px 15px 40px;
+  margin: 42px 0px 15px 40px;
   font-size: 40px;
   color: #ffffff;
 }
@@ -25,11 +25,10 @@
 .track {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00c8eb);
   border: 0;
   border-radius: 3px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
+  box-shadow: 3px 3px 5px 10px #2c2c42;
   color: #ffffff;
   font-family: Phantomsans, sans-serif;
   max-width: 100%;
@@ -82,11 +81,11 @@
 .removeButton {
   cursor: pointer;
   background: linear-gradient(to bottom right, #c7aad3, #f6e1f7);
-  box-shadow: 2px 1px 10px -1px #28226e;
+  box-shadow: 2px 1px 10px -1px #474d86;
 }
 
 .playButton {
   cursor: pointer;
   background: linear-gradient(to bottom right, #c7aad3, #f6e1f7);
-  box-shadow: 2px 1px 10px -1px #28226e;
+  box-shadow: 2px 1px 10px -1px #474d86;
 }
