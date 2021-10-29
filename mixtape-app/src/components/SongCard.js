@@ -1,6 +1,7 @@
 import { useState } from "react"
 import '../styles/SongCard.css'
 import playButton from '../assets/play-button.png'
+import addButton from '../assets/add-button.png'
 
 const SongCard = ({
     artist_name,
@@ -33,7 +34,7 @@ const SongCard = ({
             <img src={album_art.url} alt={album_name} />
             {
                 (userSongs.some((track) => { return track.id === track_id })) ? (<p>Added!</p>) :
-                    (<button className='add-button' onClick={takeSong}>Add</button>)
+                    (<button className='add-button' onClick={takeSong}><img className='add-icon' src={addButton}/></button>)
             }
             </div>
             <div className='track-text'>

@@ -1,4 +1,6 @@
 import '../styles/MixtapeCard.css'
+import playButton from '../assets/play-button.png'
+import trashButton from '../assets/bin-icon.png'
 
 const MixtapeCard = ({ 
     artistName,
@@ -30,8 +32,8 @@ const MixtapeCard = ({
             <p className='track-artist'>{artistName}</p>
         </div>      
         <div className='track-buttons'>
-            <button onClick={removeSong}>Remove</button>
-            <button onClick={handlePlay}>Play</button>
+            <button onClick={removeSong}><img className='remove-icon' src={trashButton}/></button>
+            <button onClick={handlePlay}><img className='play-icon' src={playButton}/></button>
         </div>    
         </div>
     )
