@@ -25,10 +25,10 @@
 .track {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00c8eb);
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #0081eb);
   border: 0;
   border-radius: 3px;
-  box-shadow: 3px 3px 5px 10px #2c2c42;
+  box-shadow: 5px 5px 10px 10px #222233;
   color: #ffffff;
   font-family: Phantomsans, sans-serif;
   max-width: 100%;
