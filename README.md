@@ -14,6 +14,9 @@ Create a working React App that consumes a public API and visually presents the 
 This project could not be deployed due to Spotify’s API restrictions, however here is a demo of the application.
 
 ![app demo](mixtape-demo.gif)
+![app screenshot](mixtape-app-shot.png)
+
+
 
 ## Technologies
 - JavaScript
