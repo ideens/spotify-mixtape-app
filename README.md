@@ -4,6 +4,7 @@
 This was the second project on the General Assembly course. As a pair we were drawn to the idea of using the Spotify API to create a mixtape app in which we could search for tracks or artists and display them in a playlist format. This would essentially be a simplified Spotify clone with an alternative UI.
 
 Teammate: [Preston Ng](https://github.com/sungchun)
+
 Timeframe: 3 days
 
 ## Brief
