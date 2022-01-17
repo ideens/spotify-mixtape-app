@@ -192,6 +192,10 @@ function handlePlay() {
 
 A useEffect on the Player component with the PlayID sets a boolean state, ‘playing’ to true, which plays the song in the browser.
 
+## Wins
+- Styling: Although the authentication of the app took a long time to code and did not leave much time for styling, I was very happy with the slick, vibrant style of the application.
+- Teamwork: This was my first ever pair-coding project and it was a major win. Me and Preston were always in sync, from what features we wanted to include, to the idea of the app itself.
+
 ## Challenges
 The main challenge in this project was understanding OAuth2.0 as the content of the course so far had only covered basic authentication and so navigating documentation of a more complex authentication process was a large task for a 2-3 day project. Writing the correct code in order to properly deconstruct the URL and pass the information into a request was the crux of the app and in overcoming that challenge, the rest of the application came naturally.
 Another challenge was the Spotify Player as it would throw an error if there was no access token available. Therefore it had to only be rendered when a token was present (i.e after a successful login).
