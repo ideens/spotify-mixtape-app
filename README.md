@@ -13,7 +13,7 @@ Create a working React App that consumes a public API and visually presents the 
 
 ## Demo
 
-This project could not be deployed due to Spotify’s API restrictions, however here is a demo of the application.
+This project could not be deployed due to Spotify’s API restrictions, however [here](https://vimeo.com/manage/videos/668002771) is a demo of the application on Vimeo.
 
 ![app demo](mixtape-demo.gif)
 ![app screenshot](mixtape-app-shot.png)
