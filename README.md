@@ -5,7 +5,7 @@ This was the second project on the General Assembly course. As a pair we were dr
 
 Teammate: [Preston Ng](https://github.com/sungchun)
 
-Timeframe: 3 days
+Timeframe: 2 days
 
 ## Brief
 
